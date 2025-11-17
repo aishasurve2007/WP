@@ -19,7 +19,7 @@ export default function StudentDashboard() {
           <Route path="timetable" element={<Timetable userType="student" />} />
           <Route path="attendence" element={<AttendanceCard userType="student" />} /> {/* keep remote route */}
           <Route path="classes" element={<Courses userType="student" />} />
-          <Route path="viewgrade" element={<ViewGrades userType="student" />} />
+          <Route path="viewgrades" element={<ViewGrades userType="student" />} />
           <Route path="assignments" element={<Assignments userType="student" />} />
         </Routes>
       </div>
