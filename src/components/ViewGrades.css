@@ -1,0 +1,70 @@
+/* minimal styles — keeps things visible */
+.grades-container {
+  background: #f7fbff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 1100px;
+  margin: 30px 0 30px 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0f172a;
+}
+
+.grades-header { 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  margin-bottom:18px;
+ }
+.grades-title { 
+  display:flex; gap:10px;
+   align-items:center; 
+   font-size:1.25rem; 
+  }
+.grades-list { 
+  display:flex; 
+  flex-direction:column; 
+  gap:12px;
+ }
+
+.grade-card { 
+  background:white; 
+  padding:14px; 
+  border-radius:8px; 
+  box-shadow: 0 6px 14px rgba(0,0,0,0.04); 
+}
+.grade-top { display:flex; 
+  justify-content:space-between; 
+  gap:10px;
+ }
+.course-title {
+   margin:6px 0; 
+   font-size:1.05rem;
+   }
+.course-desc { 
+  margin:0; 
+  color:#475569; 
+  font-size:0.95rem; }
+.grade-middle { 
+  display:flex; 
+  justify-content:center; 
+  gap:8px; 
+  padding-top:8px;
+  color:#0b1220; 
+  font-weight:600; 
+  }
+.grade-badge { 
+  background:#e6f0ff;
+  padding:6px 10px;
+  border-radius:8px; 
+  font-weight:700;
+  }
+.btn-download { 
+  background:#2563eb; 
+  color:white; 
+  border:none; 
+  padding:8px 10px; 
+  border-radius:8px; 
+  display:inline-flex;
+  gap:8px; 
+  align-items:center; 
+}

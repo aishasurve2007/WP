@@ -1,25 +1,21 @@
 import React, { useState } from "react";
-import { HomeIcon, UserIcon, SettingsIcon, BookOpenIcon, ViewIcon} from "lucide-react";
+import { HomeIcon, UserIcon, SettingsIcon, BookOpenIcon, ViewIcon } from "lucide-react";
 import "./StudentSidebar.css";
 import { Link } from "react-router-dom";
-
 
 export default function StudentSidebar() {
   const [open, setOpen] = useState(true);
   const [active, setActive] = useState("Home");
 
   const menuItems = [
-    { name: "Home", icon: <HomeIcon size={20} /> },
-    { name: "Students", icon: <UserIcon size={20} /> },
+    { name: "Home", icon: <HomeIcon size={20} />, path: "/student" },
+    { name: "Students", icon: <UserIcon size={20} />, path: "/student" },
     { name: "Classes", icon: <BookOpenIcon size={20} />, path: "/student/classes" },
     { name: "Timetable", icon: <BookOpenIcon size={20} />, path: "/student/timetable" },
-
-    { name: "Attendance", icon: <SettingsIcon size={20} />, path: "/student/attendence"},
-
-    { name: "Settings", icon: <SettingsIcon size={20} /> },
-    { name: "View Grade", icon: <ViewIcon size={20} />, path: "/student/View_Grades"},
-    { name: "Assignments", icon: <BookOpenIcon size={20} />, path: "/student/Assignments" },
-
+    { name: "Attendance", icon: <SettingsIcon size={20} />, path: "/student/attendence" }, // remote
+    { name: "Settings", icon: <SettingsIcon size={20} /> },                                  // local
+    { name: "ViewGrade", icon: <ViewIcon size={20} />, path: "/student/ViewGrades" },    // local
+    { name: "Assignments", icon: <BookOpenIcon size={20} />, path: "/student/Assignments" } // local
   ];
 
   return (
@@ -35,9 +31,9 @@ export default function StudentSidebar() {
             onClick={() => setActive(item.name)}
           >
             <Link to={item.path} className="menu-link">
-        {item.icon}
-        {open && <span className="menu-text">{item.name}</span>}
-      </Link>
+              {item.icon}
+              {open && <span className="menu-text">{item.name}</span>}
+            </Link>
           </li>
         ))}
       </ul>

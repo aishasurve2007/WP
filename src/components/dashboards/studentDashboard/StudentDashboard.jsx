@@ -3,12 +3,10 @@ import StudentSidebar from "./StudentSidebar";
 import StudentHeader from "./StudentHeader";
 import StudentDashboardContent from "./StudentDashboardContent";
 import Timetable from "../../Timetable";
-import Courses from "../../Courses";
-import View_Grades from "../../View_Grades";
+import AttendanceCard from "../../AttendanceCard"; // from remote HEAD
+import Courses from "../../Courses";               // from your local changes
+import ViewGrades from "../../ViewGrades";
 import Assignments from "../../Assignments";
-
-
-import AttendanceCard from "../../AttendanceCard";
 
 export default function StudentDashboard() {
   return (
@@ -19,18 +17,10 @@ export default function StudentDashboard() {
         <Routes>
           <Route path="/" element={<StudentDashboardContent />} />
           <Route path="timetable" element={<Timetable userType="student" />} />
-
+          <Route path="attendence" element={<AttendanceCard userType="student" />} /> {/* keep remote route */}
           <Route path="classes" element={<Courses userType="student" />} />
-          <Route path="viewgrade" element={<View_Grades userType="student" />} />
+          <Route path="viewgrade" element={<ViewGrades userType="student" />} />
           <Route path="assignments" element={<Assignments userType="student" />} />
-
-
-          <Route path="attendence" element={<AttendanceCard userType="student" />} />
-
-          <Route path="classes" element={<Courses userType="student" />} />
-          <Route path="viewgrade" element={<View_Grades userType="student" />} />
-          <Route path="assignments" element={<Assignments userType="student" />} />
-
         </Routes>
       </div>
     </div>

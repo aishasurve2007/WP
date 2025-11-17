@@ -1,52 +1,94 @@
-import React, { useState, useEffect } from "react";
-import "./Timetable.css";
+import React from "react";
+import {
+  FileText,
+  Calendar,
+  User,
+  Paperclip,
+  CheckCircle,
+  Clock
+} from "lucide-react";
+import "./Assignments.css";
 
-export default function Timetable({ userType }) {
-  const [timetable, setTimetable] = useState([]);
+export default function Assignments() {
+  const assignments = [
+    {
+      title: "Level Design Report",
+      desc: "Short analysis of player flow in level 3.",
+      instructor: "Prof. John Doe",
+      due: "2025-12-01",
+      credits: 2,
+      attachments: 1,
+      status: "Submitted"
+    },
+    {
+      title: "Character Model Sheet",
+      desc: "2 views + profile for main character.",
+      instructor: "Jane Smith",
+      due: "2025-12-07",
+      credits: 3,
+      attachments: 2,
+      status: "Pending"
+    },
+    {
+      title: "Prototype Playtest Notes",
+      desc: "Collect and summarize 5 playtest sessions.",
+      instructor: "Alex Johnson",
+      due: "2025-12-10",
+      credits: 1,
+      attachments: 0,
+      status: "Overdue"
+    }
+  ];
 
-  useEffect(() => {
-    // Dummy data for students
-    const studentData = [
-      { id: 1, day: "Monday", time: "9:00 - 10:00", subject: "Math" },
-      { id: 2, day: "Tuesday", time: "10:00 - 11:00", subject: "English" },
-      { id: 3, day: "Wednesday", time: "11:00 - 12:00", subject: "Science" },
-      { id: 4, day: "Thursday", time: "9:00 - 10:00", subject: "History" },
-      { id: 5, day: "Friday", time: "10:00 - 11:00", subject: "Art" },
-    ];
-
-    // Dummy data for teachers
-    const teacherData = [
-      { id: 1, day: "Monday", time: "9:00 - 10:00", subject: "Math - Class 10" },
-      { id: 2, day: "Tuesday", time: "10:00 - 11:00", subject: "English - Class 9" },
-      { id: 3, day: "Wednesday", time: "11:00 - 12:00", subject: "Science - Class 8" },
-      { id: 4, day: "Thursday", time: "9:00 - 10:00", subject: "History - Class 7" },
-      { id: 5, day: "Friday", time: "10:00 - 11:00", subject: "Art - Class 6" },
-    ];
-
-    setTimetable(userType === "teacher" ? teacherData : studentData);
-  }, [userType]);
+  const statusClass = (s) =>
+    s === "Submitted" ? "status-submitted" : s === "Pending" ? "status-pending" : "status-overdue";
 
   return (
-    <div className="timetable">
-      <h2>{userType === "teacher" ? "Teacher" : "Student"} Timetable</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Time</th>
-            <th>Class / Subject</th>
-          </tr>
-        </thead>
-        <tbody>
-          {timetable.map((entry) => (
-            <tr key={entry.id}>
-              <td>{entry.day}</td>
-              <td>{entry.time}</td>
-              <td>{entry.subject}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="assign-container">
+      <h1 className="assign-header">
+        <FileText size={28} /> Assignments
+      </h1>
+
+      <div className="assign-list">
+        {assignments.map((a, i) => (
+          <article className="assign-card" key={i}>
+            <div className="assign-top">
+              <div className="assign-title-wrap">
+                <h2 className="assign-title">{a.title}</h2>
+                <p className="assign-small-desc">{a.desc}</p>
+              </div>
+
+              <div className="assign-right">
+                <div className="assign-due">
+                  <Calendar size={16} />
+                  <span className="assign-due-text">{a.due}</span>
+                </div>
+                <div className="assign-credits">{a.credits} cr</div>
+              </div>
+            </div>
+
+            <div className="assign-middle">
+              <User size={16} />
+              <span className="assign-instructor">{a.instructor}</span>
+            </div>
+
+            <div className="assign-bottom">
+              <div className={`assign-status ${statusClass(a.status)}`}>
+                {a.status === "Submitted" && <CheckCircle size={14} />}
+                {a.status === "Pending" && <Clock size={14} />}
+                <span className="status-text">{a.status}</span>
+              </div>
+
+              <div className="assign-actions">
+                <button className="btn-primary">
+                  <FileText size={14} />
+                  <span>Open</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   );
 }
