@@ -3,6 +3,7 @@ import StudentSidebar from "./StudentSidebar";
 import StudentHeader from "./StudentHeader";
 import StudentDashboardContent from "./StudentDashboardContent";
 import Timetable from "../../Timetable";
+import AttendanceCard from "../../AttendanceCard";
 
 export default function StudentDashboard() {
   return (
@@ -13,6 +14,7 @@ export default function StudentDashboard() {
         <Routes>
           <Route path="/" element={<StudentDashboardContent />} />
           <Route path="timetable" element={<Timetable userType="student" />} />
+          <Route path="attendence" element={<AttendanceCard userType="student" />} />
         </Routes>
       </div>
     </div>

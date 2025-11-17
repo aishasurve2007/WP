@@ -13,7 +13,7 @@ export default function StudentSidebar() {
     { name: "Students", icon: <UserIcon size={20} /> },
     { name: "Classes", icon: <BookOpenIcon size={20} /> },
     { name: "Timetable", icon: <BookOpenIcon size={20} />, path: "/student/timetable" },
-    { name: "Settings", icon: <SettingsIcon size={20} /> },
+    { name: "Attendance", icon: <SettingsIcon size={20} />, path: "/student/attendence"},
   ];
 
   return (

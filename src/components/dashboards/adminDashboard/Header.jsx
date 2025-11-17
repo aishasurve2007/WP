@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="header">
       <h1 className="header-title">Education Dashboard</h1>
-      <div className="profile">Admin</div>
+      <div className="profile">Teacher</div>
     </header>
   );
 }

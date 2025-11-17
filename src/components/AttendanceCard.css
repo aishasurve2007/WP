@@ -1,0 +1,87 @@
+.attendance-card {
+  width: 100%;        /* fills container width */
+  max-width: 600px;   /* card won't be too wide */
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #f0f0f0;
+  font-family: "Inter", sans-serif;
+}
+
+.attendance-container {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  padding: 80px 40px;      /* space around the card */
+}
+
+.attendance-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* Header row */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Status Chip */
+.status-chip {
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 14px;
+  color: white;
+}
+
+.status-chip.good {
+  background-color: #2ecc71; /* Green */
+}
+
+.status-chip.bad {
+  background-color: #e74c3c; /* Red */
+}
+
+/* Info rows */
+.info {
+  margin-top: 16px;
+}
+
+.label {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.student-name,
+.attendance-value {
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  margin-top: 20px;
+  height: 10px;
+  background: #f1f1f1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4c9aff, #007bff);
+  border-radius: 12px;
+  transition: width 0.4s ease;
+}
