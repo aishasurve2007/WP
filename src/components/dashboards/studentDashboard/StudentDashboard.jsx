@@ -3,6 +3,9 @@ import StudentSidebar from "./StudentSidebar";
 import StudentHeader from "./StudentHeader";
 import StudentDashboardContent from "./StudentDashboardContent";
 import Timetable from "../../Timetable";
+import Courses from "../../Courses";
+import View_Grades from "../../View_Grades";
+import Assignments from "../../Assignments";
 
 export default function StudentDashboard() {
   return (
@@ -13,6 +16,9 @@ export default function StudentDashboard() {
         <Routes>
           <Route path="/" element={<StudentDashboardContent />} />
           <Route path="timetable" element={<Timetable userType="student" />} />
+          <Route path="classes" element={<Courses userType="student" />} />
+          <Route path="viewgrade" element={<View_Grades userType="student" />} />
+          <Route path="assignments" element={<Assignments userType="student" />} />
         </Routes>
       </div>
     </div>

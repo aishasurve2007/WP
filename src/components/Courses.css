@@ -1,0 +1,102 @@
+/* Main container aligned left and bigger */
+.courses-container {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 1100px;
+  margin: 30px 0 30px 50px; /* left aligned */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.courses-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 35px;
+}
+
+/* Course list */
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Individual course card */
+.course-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  width: 280px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+/* Header section inside card */
+.course-header {
+  display: flex;
+  justify-content: space-between; /* title left, credits right */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Course title */
+.course-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+/* Course credits */
+.course-credits {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111827;
+  text-align: center;
+}
+
+/* Small description */
+.course-desc {
+  font-size: 0.95rem;
+  color: #111827;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* Instructor centered */
+.course-instructor {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  color: #111827;
+}
+
+/* Add course button */
+.add-course-btn {
+  display: block;
+  margin: 40px 0 0 0;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #000000;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-course-btn:hover {
+  background-color: #000000;
+}
