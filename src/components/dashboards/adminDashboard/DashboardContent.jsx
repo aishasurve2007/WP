@@ -5,17 +5,17 @@ import { Users, UserCheck, BookOpen, Activity } from "lucide-react";
 
 export default function DashboardContent() {
  const stats = [
-  { title: "Total Students", value: 1200, color: "#3b82f6", icon: <Users size={24} /> },
-  { title: "Teachers", value: 50, color: "#10b981", icon: <UserCheck size={24} /> },
-  { title: "Classes", value: 30, color: "#f59e0b", icon: <BookOpen size={24} /> },
+  { title: "My Profile", color: "#3b82f6", icon: <Users size={24} /> },
+  { title: "Courses", value: 4, color: "#10b981", icon: <UserCheck size={24} /> },
+  { title: "Grades", value: 30, color: "#f59e0b", icon: <BookOpen size={24} /> },
   { title: "Attendance", value: "95%", color: "#ef4444", icon: <Activity size={24} /> },
 ];
 
 
   const recentStudents = [
-    { name: "Alice Johnson", enrolled: "2 days ago" },
-    { name: "Bob Smith", enrolled: "5 days ago" },
-    { name: "Clara Lee", enrolled: "1 week ago" },
+    { name: "English", enrolled: "1 day" },
+    { name: "Mathematics", enrolled: "3 days" },
+    { name: "Science", enrolled: "1 week" },
   ];
 
   const recentActivities = [
@@ -27,8 +27,8 @@ export default function DashboardContent() {
 
   const activeCourses = [
     { name: "Mathematics", students: 120 },
-    { name: "Physics", students: 80 },
-    { name: "History", students: 60 },
+    { name: "Science", students: 80 },
+    { name: "English", students: 60 },
   ];
 
   return (
@@ -51,9 +51,9 @@ export default function DashboardContent() {
 
       {/* Two Column Section */}
       <div className="dashboard-row">
-        {/* Recent Students */}
+        {/* Upcoming exams */}
         <div className="card recent-students">
-             <h3>Recent Students Enrolled</h3>
+             <h3>Upcoming Exams</h3>
                  <ul>
                    {recentStudents.map((student) => (
                     <li key={student.name} className="student-row">

@@ -13,9 +13,16 @@ export default function StudentSidebar() {
     { name: "Students", icon: <UserIcon size={20} /> },
     { name: "Classes", icon: <BookOpenIcon size={20} />, path: "/student/classes" },
     { name: "Timetable", icon: <BookOpenIcon size={20} />, path: "/student/timetable" },
+<<<<<<< HEAD
+    { name: "Attendance", icon: <SettingsIcon size={20} />, path: "/student/attendence"},
+=======
     { name: "Settings", icon: <SettingsIcon size={20} /> },
     { name: "View Grade", icon: <ViewIcon size={20} />, path: "/student/View_Grades"},
     { name: "Assignments", icon: <BookOpenIcon size={20} />, path: "/student/Assignments" },
+<<<<<<< HEAD
+=======
+>>>>>>> 7c6ec76 (Add assignments and courses components and update dashboards)
+>>>>>>> 9ee610c
   ];
 
   return (
