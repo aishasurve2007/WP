@@ -68,3 +68,6 @@
   gap:8px; 
   align-items:center; 
 }
+.btn-download{
+  display : none;
+}

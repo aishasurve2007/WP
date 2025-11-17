@@ -78,13 +78,7 @@ export default function Assignments() {
                 {a.status === "Pending" && <Clock size={14} />}
                 <span className="status-text">{a.status}</span>
               </div>
-
-              <div className="assign-actions">
-                <button className="btn-primary">
-                  <FileText size={14} />
-                  <span>Open</span>
-                </button>
-              </div>
+              
             </div>
           </article>
         ))}
