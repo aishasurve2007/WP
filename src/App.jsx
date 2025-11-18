@@ -7,8 +7,8 @@ import StudentSidebar from "./components/dashboards/studentDashboard/StudentSide
 import StudentHeader from "./components/dashboards/studentDashboard/StudentHeader";
 import StudentDashboardContent from "./components/dashboards/studentDashboard/StudentDashboardContent";
 import StudentDashboard from "./components/dashboards/studentDashboard/StudentDashboard";
-import teacherDashboard from "./components/dashboards/teacherDashboard/teacherDashboard";
-const userType = "student";
+import TeacherDashboard from "./components/dashboards/teacherDashboard/teacherDashboard";
+const userType = "teacher";
 
 
 
@@ -30,10 +30,10 @@ export default function App() {
           path="/teacher/*"
           element={
             <div className="app">
-              <Sidebar />
+              
               <div className="main">
-                <Header />
-                <DashboardContent />
+              
+                <TeacherDashboard />
               </div>
             </div>
           }

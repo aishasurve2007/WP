@@ -5,9 +5,9 @@ import DashboardContent from "./DashboardContent";
 import Timetable from "../../TeacherTimetable";
 import Attendance from "../../TeacherAttendance";
 import TeacherCourses from "../../TeacherCourses";
-import Grades from "../../TeacherGrades";
+import TeacherGrades from "../../TeacherGrades";
 
-export default function teacherDashboard() {
+export default function TeacherDashboard() {
   return (
     <div className="app">
       <Sidebar />
@@ -16,9 +16,9 @@ export default function teacherDashboard() {
         <Routes>
           <Route path="/" element={<DashboardContent />} />
           <Route path="timetable" element={<Timetable userType="teacher" />} />
-          <Route path="attendence" element={<Attendance userType="teacher" />} />
+          <Route path="attendance" element={<Attendance userType="teacher" />} />
           <Route path="classes" element={<TeacherCourses userType="teacher" />} />
-          <Route path="grades" element={<Grades userType="teacher" />} />
+          <Route path="grades" element={<TeacherGrades userType="teacher" />} />
         </Routes>
       </div>
     </div>

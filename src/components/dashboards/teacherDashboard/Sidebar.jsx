@@ -8,7 +8,7 @@ export default function Sidebar() {
 
   const menuItems = [
     { name: "Home", icon: <HomeIcon size={20} /> },
-    { name: "Classes", icon: <BookOpenIcon size={20} /> },
+    { name: "Classes", icon: <BookOpenIcon size={20} /> , path: "/teacher/TeacherCourses" },
     { name: "Timetable", icon: <BookOpenIcon size={20} />, path: "/teacher/TeacherTimetable" },
     { name: "Attendance", icon: <SettingsIcon size={20} />, path: "/teacher/TeacherAttendance" },
     { name: "Grades", icon: <ViewIcon size={20} />, path: "/teacher/TeacherGrades" },

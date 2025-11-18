@@ -1,8 +1,8 @@
 import React from "react";
 import { Award, Download, User } from "lucide-react";
-import "./ViewGrades.css"; // ensure this file exists in the same folder
+import "./TeacherGrades.css"; 
 
-export default function ViewGrades() {
+export default function TeacherGrades() {
   // minimal data to test rendering
   const courses = [
     { code: "GDEV201", title: "Unity Game Development", desc: "Intro to Unity & C# scripting.", instructor: "Prof. John Doe", credits: 4, grade: "A-" },
