@@ -1,7 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./DashboardContent.css";
 import { Users, UserCheck, BookOpen, Activity } from "lucide-react";
-
 
 export default function DashboardContent() {
  const stats = [
@@ -10,7 +10,6 @@ export default function DashboardContent() {
   { title: "Grades", value: 30, color: "#f59e0b", icon: <BookOpen size={24} /> },
   { title: "Attendance", value: "95%", color: "#ef4444", icon: <Activity size={24} /> },
 ];
-
 
   const recentStudents = [
     { name: "English", enrolled: "1 day" },
@@ -30,23 +29,47 @@ export default function DashboardContent() {
     { name: "Science", students: 80 },
     { name: "English", students: 60 },
   ];
+  
+  const navigate = useNavigate();
 
   return (
     <div className="dashboard-content">
       {/* Top Stats */}
       <div className="stats-grid">
-        {stats.map((stat) => (
-          <div
-            key={stat.title}
-            className="card"
-            style={{ borderTop: `4px solid ${stat.color}` }}
-          >
-            <div className="card-header">
-               {stat.icon}<h3>{stat.title}</h3>
+        {stats.map((stat) => {
+          // Map title to route path
+          let path = "";
+          switch (stat.title) {
+            case "My Profile":
+              path = "/"; // adjust if you have a profile page
+              break;
+            case "Courses":
+              path = "classes";
+              break;
+            case "Grades":
+              path = "grades";
+              break;
+            case "Attendance":
+              path = "attendance";
+              break;
+            default:
+              path = "/";
+          }
+
+          return (
+            <div
+              key={stat.title}
+              className="card"
+              style={{ borderTop: `4px solid ${stat.color}`, cursor: "pointer" }}
+              onClick={() => navigate(path)} // added navigation
+            >
+              <div className="card-header">
+                 {stat.icon}<h3>{stat.title}</h3>
+              </div>
+              <p>{stat.value}</p>
             </div>
-            <p>{stat.value}</p>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Two Column Section */}
@@ -63,7 +86,6 @@ export default function DashboardContent() {
                      ))}
                  </ul>
         </div>
-
 
         {/* Recent Activities */}
         <div className="card recent-activities">

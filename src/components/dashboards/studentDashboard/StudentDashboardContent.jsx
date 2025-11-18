@@ -1,9 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // added
 import "./StudentDashboardContent.css";
 
 export default function StudentDashboardContent() {
   const stats = [
-    { title: "Assigments", value: 1200, color: "#3b82f6" },
+    { title: "Assignments", value: 1200, color: "#3b82f6" },
     { title: "Timetable", value: 50, color: "#10b981" },
     { title: "Courses", value: 30, color: "#f59e0b" },
     { title: "Attendance", value: "95%", color: "#ef4444" },
@@ -28,27 +29,51 @@ export default function StudentDashboardContent() {
     { name: "WP", students: 90 },
   ];
 
+  const navigate = useNavigate(); // added
+
   return (
     <div className="dashboard-content">
       {/* Top Stats */}
       <div className="stats-grid">
-        {stats.map((stat) => (
-          <div
-            key={stat.title}
-            className="card"
-            style={{ borderTop: `4px solid ${stat.color}` }}
-          >
-            <h3>{stat.title}</h3>
-            <p>{stat.value}</p>
-          </div>
-        ))}
+        {stats.map((stat) => {
+          // Map card titles to routes
+          let path = "";
+          switch (stat.title) {
+            case "Assignments":
+              path = "assignments";
+              break;
+            case "Timetable":
+              path = "timetable";
+              break;
+            case "Courses":
+              path = "classes";
+              break;
+            case "Attendance":
+              path = "attendance";
+              break;
+            default:
+              path = "/";
+          }
+
+          return (
+            <div
+              key={stat.title}
+              className="card"
+              style={{ borderTop: `4px solid ${stat.color}`, cursor: "pointer" }} // added cursor
+              onClick={() => navigate(path)} // added navigation
+            >
+              <h3>{stat.title}</h3>
+              <p>{stat.value}</p>
+            </div>
+          );
+        })}
       </div>
 
       {/* Two Column Section */}
       <div className="dashboard-row">
         {/* Recent Students */}
         <div className="card recent-students">
-             <h3>Recent Assigments</h3>
+             <h3>Recent Assignments</h3>
                  <ul>
                    {recentStudents.map((student) => (
                     <li key={student.name} className="student-row">
@@ -58,7 +83,6 @@ export default function StudentDashboardContent() {
                      ))}
                  </ul>
         </div>
-
 
         {/* Recent Activities */}
         <div className="card recent-activities">
