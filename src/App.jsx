@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Sidebar from "./components/dashboards/adminDashboard/Sidebar";
-import Header from "./components/dashboards/adminDashboard/Header";
-import DashboardContent from "./components/dashboards/adminDashboard/DashboardContent";
+import Sidebar from "./components/dashboards/teacherDashboard/Sidebar";
+import Header from "./components/dashboards/teacherDashboard/Header";
+import DashboardContent from "./components/dashboards/teacherDashboard/DashboardContent";
 import StudentSidebar from "./components/dashboards/studentDashboard/StudentSidebar";
 import StudentHeader from "./components/dashboards/studentDashboard/StudentHeader";
 import StudentDashboardContent from "./components/dashboards/studentDashboard/StudentDashboardContent";
 import StudentDashboard from "./components/dashboards/studentDashboard/StudentDashboard";
+import teacherDashboard from "./components/dashboards/teacherDashboard/teacherDashboard";
 const userType = "student";
 
 
@@ -26,7 +27,7 @@ export default function App() {
         />
         {/* Admin Dashboard */}
         <Route
-          path="/admin"
+          path="/teacher/*"
           element={
             <div className="app">
               <Sidebar />

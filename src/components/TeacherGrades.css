@@ -1,0 +1,56 @@
+.teacher-grade-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.teacher-grade-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-assignment {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.add-assignment input {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 120px;
+}
+
+.add-assignment button {
+  padding: 6px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4b6cb7;
+  color: #fff;
+  cursor: pointer;
+}
+
+.assignments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.assignment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.grade-input {
+  width: 60px;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}

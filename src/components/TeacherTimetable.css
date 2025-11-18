@@ -1,0 +1,42 @@
+.teacher-timetable-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.teacher-timetable-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.timetable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.timetable-card {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.timetable-day {
+  font-weight: bold;
+  color: #4b6cb7;
+  font-size: 16px;
+}
+
+.timetable-subject {
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.timetable-time,
+.timetable-classroom {
+  font-size: 14px;
+  color: #555;
+}

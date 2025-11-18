@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HomeIcon, UserIcon, SettingsIcon, BookOpenIcon } from "lucide-react";
+import { HomeIcon, SettingsIcon, BookOpenIcon, ViewIcon } from "lucide-react";
 import "./Sidebar.css";
 
 export default function Sidebar() {
@@ -8,9 +8,10 @@ export default function Sidebar() {
 
   const menuItems = [
     { name: "Home", icon: <HomeIcon size={20} /> },
-    { name: "Students", icon: <UserIcon size={20} /> },
     { name: "Classes", icon: <BookOpenIcon size={20} /> },
-    { name: "Settings", icon: <SettingsIcon size={20} /> },
+    { name: "Timetable", icon: <BookOpenIcon size={20} />, path: "/teacher/TeacherTimetable" },
+    { name: "Attendance", icon: <SettingsIcon size={20} />, path: "/teacher/TeacherAttendance" },
+    { name: "Grades", icon: <ViewIcon size={20} />, path: "/teacher/TeacherGrades" },
   ];
 
   return (
